@@ -3,15 +3,15 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: pc-api-dev-test
-  name: pc-api-svc-dev-test
+    app: pc-api-{NAMESPACE}-{TENANT_NAME}
+  name: pc-api-svc-{NAMESPACE}-{TENANT_NAME}
   namespace: dev
 spec:
   ports:
-    - name: pc-api-svc-dev-test
+    - name: pc-api-svc-{NAMESPACE}-{TENANT_NAME}
       port: 80
       targetPort: 80
   selector:
-    app: pc-api-dev-test
+    app: pc-api-{NAMESPACE}-{TENANT_NAME}
 status:
   loadBalancer: {}
