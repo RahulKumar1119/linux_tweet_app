@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: dev
+  name: pc-api-dev-test
+spec:
+  selector:
+    matchLabels:
+      app: pc-api-dev-test
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: pc-api-dev-test
+    spec:
+      containers:
+        - name: pc-api
+          image: 9870050478/linux_tweet_app:1.0
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80

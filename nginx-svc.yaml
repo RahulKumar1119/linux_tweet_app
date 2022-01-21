@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: pc-api-dev-test
+  name: pc-api-svc-dev-test
+  namespace: dev
+spec:
+  ports:
+    - name: pc-api-svc-dev-test
+      port: 80
+      targetPort: 80
+  selector:
+    app: pc-api-dev-test
+status:
+  loadBalancer: {}
